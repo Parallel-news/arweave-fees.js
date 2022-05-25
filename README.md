@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./imgs/elephant.png" height="124">
+    <img src="./imgs/elephant.png" height="248">
   </a>
   <h3 align="center">arweave-fees.js</h3>
   <p align="center">🐘 utils and helper functions for Arweave developers 🐘</p>
