@@ -1,0 +1,31 @@
+{
+  "name": "arweave-fees.js",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Arweave gas (winston) utils repo",
+  "main": "./src/app.js",
+  "scripts": {
+    "start": "node ./src/app.js",
+    "test": "node ./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Parallel-news/arweave-fees.js.git"
+  },
+  "keywords": [
+    "arweave",
+    "gas",
+    "utils"
+  ],
+  "author": "charmful0x",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Parallel-news/arweave-fees.js/issues"
+  },
+  "homepage": "https://github.com/Parallel-news/arweave-fees.js#readme",
+  "dependencies": {
+    "arweave": "^1.10.23",
+    "axios": "^0.27.2",
+    "redstone-api": "^0.4.11"
+  }
+}
