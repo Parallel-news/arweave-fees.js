@@ -5,18 +5,13 @@
   "description": "Arweave gas (winston) utils repo",
   "main": "./src/app.js",
   "scripts": {
-    "start": "node ./src/app.js",
-    "test": "node ./test.js"
+    "start": "node ./src/app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Parallel-news/arweave-fees.js.git"
   },
-  "keywords": [
-    "arweave",
-    "gas",
-    "utils"
-  ],
+  "keywords": ["arweave", "gas", "utils"],
   "author": "charmful0x",
   "license": "MIT",
   "bugs": {
