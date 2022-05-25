@@ -8,6 +8,13 @@
 ## Synopsis
 This library is for developers building on [Arweave network](https://arweave.org), it's a package of helper functions that makes the developers' work easier and save their time.
 
+## Install
+
+```sh
+npm install -g arweave-fees.js
+
+```
+
 ## Examples
 
 ### 1- The Arweave Equivalent Of ethgasstation.io
@@ -120,5 +127,20 @@ async function testUpload() {
   await arweave.transactions.post(tx);
 }
 
+```
+
+#### 3.2 response example
+```js
+const response = {
+  canUpload: true,
+  balanceWinstonBefore: 8829045944941,
+  balanceWinstonAfter: 8828689309166,
+  costInWinston: 356635775,
+  costInAr: 0.000356635775,
+  costInUsd: 0.0053044370497761706,
+};
 
 ```
+
+## License
+This library is licensed under the [MIT license](./LICENSE).
