@@ -12,7 +12,10 @@ export const arweave = Arweave.init({
 
 export async function getArPrice() {
   try {
-    const price = (await redstone.getPrice("AR"))?.value;
+    const priceFromRedstone = (await redstone.getPrice("AR")).value;
+    const price = priceFromRedstone
+      ? priceFromRedstone
+      : await ArPriceCoingecko();
     return price;
   } catch (error) {
     console.log(`${error.name} : ${error.description}`);
@@ -60,5 +63,23 @@ export async function _checkTxObject(txObj) {
   } catch (error) {
     console.log(error);
     return false;
+  }
+}
+
+async function ArPriceCoingecko() {
+  try {
+    const res = (
+      await axios.get(
+        "https://api.coingecko.com/api/v3/simple/price?ids=arweave&vs_currencies=usd"
+      )
+    ).data;
+
+    if (res.arweave) {
+      return res.arweave.usd;
+    }
+
+    throw new Error(`Error fetching AR price from coingecko`);
+  } catch (error) {
+    console.log(error);
   }
 }
