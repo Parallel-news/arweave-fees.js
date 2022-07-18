@@ -49,3 +49,18 @@ export async function canUserUpload({ txObj = {} }) {
     console.log(error);
   }
 }
+
+export async function canUploadUpTo(winstons) {
+  try {
+    if (!winstons || !Number.isInteger(winstons) || winstons <= 0) {
+      return 0;
+    }
+
+    const storageTable = await storageCostTable();
+    const costPerMb = storageTable.MB.winston;
+
+    return winstons / costPerMb;
+  } catch (error) {
+    return 0;
+  }
+}
