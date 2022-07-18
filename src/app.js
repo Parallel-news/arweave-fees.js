@@ -1,5 +1,9 @@
 import { checkFeeMultiplier } from "./utils/feeMultiplierChecker.js";
-import { storageCostTable, canUserUpload } from "./utils/storageCost.js";
+import {
+  storageCostTable,
+  canUserUpload,
+  canUploadUpTo,
+} from "./utils/storageCost.js";
 
 export async function checkTxAgainstGasFees({ txObj = {}, feeMultiplier = 1 }) {
   try {
@@ -33,3 +37,11 @@ export async function canUpload({ txObj = {} }) {
   }
 }
 
+export async function canUploadSize(winstons) {
+  try {
+    const result = await canUploadUpTo(winstons);
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+}
